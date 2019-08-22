@@ -1,0 +1,126 @@
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 75vw;
+    background-color: $color-secondary;
+    padding: 1rem;
+}
+
+.app {
+    height: 70%;
+    background-color: $color-dark-secondary;
+}
+
+/////////////////////
+//// ODDS PANEL
+/////////////////
+
+.odds-panel {
+    height: 29%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    // background-color: $color-dark-secondary;
+
+    &__card {
+        width: 13.9%;
+        text-align: center;
+        color: $color-dark;
+        background-color: $color-primary;
+        transition: background-color .4s, color .4s, transform .4s;
+
+        &--name {
+            font-weight: 100;
+            font-size: 120%;
+            text-align: center;
+            margin-top: .4rem;
+
+            span {
+                display: inline-block;
+                transition: transform .4s;
+            }
+
+            .lastname {
+                line-height: 90%;
+                font-size: 122%;
+                display: inline-block;
+                font-weight: 400;
+            }
+        }
+
+        &--info-box {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 1.5rem 2rem 0 2.3rem;
+
+            div {
+                text-align: center;
+
+                img {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+
+                p {
+                    font-weight: 200;
+                    font-size: 120%;
+                    margin-top: .1rem;
+                }
+
+                .icon-white {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &--percentage {
+            text-align: center;
+            display: inline-block;
+            padding: .2rem 1rem .2rem 1rem;
+            border-radius: 45%;
+            font-size: 140%;
+            font-weight: 700;
+            letter-spacing: .2rem;
+            color: $color-secondary;
+            background-color: $color-dark;
+            transition: background-color .4s, color .4s;
+        }
+
+        &.active {
+            background-color: $color-dark;
+            color: #fff;
+            transform: translateY(-.4rem);
+            transition: background-color .4s, color .4s, transform .4s;
+
+            .odds-panel__card--percentage {
+                background-color: #fff;
+                color: $color-dark;
+                transition: background-color .4s, color .4s;
+            }
+
+            .icon-black {
+                display: none;
+            }
+            .icon-white {
+                display: inline-block;
+                opacity: 1;
+            }
+
+            .firstname {
+                transform: translateX(-1.8rem);
+                transition: transform .4s;
+            }
+
+            .lastname {
+                transform: translateX(1.8rem);
+                transition: transform .4s;
+            }
+        }
+
+    }
+}

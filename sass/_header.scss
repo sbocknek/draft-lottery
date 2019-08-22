@@ -1,0 +1,67 @@
+.hero {
+    height: 24vh;
+
+    &__header {
+        color: $color-primary;
+        font-size: 5.8rem;
+        font-weight: 800;
+        text-align: center;
+        padding-top: 1rem;
+        transition: letter-spacing .5s;
+
+        &::after {
+            display: block;
+            height: .1rem;
+            background-color: $color-primary;
+            content: " ";
+            width: 13rem;
+            margin: 0 auto;
+            margin-top: -.5rem;
+        }
+
+        &--stick {
+            display: inline-block;
+            transition: transform .5s; 
+        }
+    }
+
+    &__subheader {
+        color: #fff;
+        font-size: 2.2rem;
+        letter-spacing: .1rem;
+        font-weight: 100;
+        text-align: center;
+        margin-top: 1.3rem;
+        transition: transform .4s;
+
+        &--year {
+            font-weight: 300;
+            font-size: 105%;
+            margin-right: .5rem;
+        }
+    }
+
+    &:hover,
+    &:active {
+
+        .hero {
+
+            &__header {
+                letter-spacing: .2rem;
+                transition: letter-spacing .5s;
+                
+                &--stick {
+                    transform: rotate(16deg);
+                    transition: transform .5s; 
+                }
+            }
+            
+            &__subheader {
+                transform: rotate(3deg);
+                transition: transform .4s;
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,197 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif; }
+
+body {
+  box-sizing: border-box;
+  background-color: #171717; }
+
+.hero {
+  height: 24vh; }
+  .hero__header {
+    color: #6FA0C0;
+    font-size: 5.8rem;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 1rem;
+    transition: letter-spacing .5s; }
+    .hero__header::after {
+      display: block;
+      height: .1rem;
+      background-color: #6FA0C0;
+      content: " ";
+      width: 13rem;
+      margin: 0 auto;
+      margin-top: -.5rem; }
+    .hero__header--stick {
+      display: inline-block;
+      transition: transform .5s; }
+  .hero__subheader {
+    color: #fff;
+    font-size: 2.2rem;
+    letter-spacing: .1rem;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 1.3rem;
+    transition: transform .4s; }
+    .hero__subheader--year {
+      font-weight: 300;
+      font-size: 105%;
+      margin-right: .5rem; }
+  .hero:hover .hero__header, .hero:active .hero__header {
+    letter-spacing: .2rem;
+    transition: letter-spacing .5s; }
+    .hero:hover .hero__header--stick, .hero:active .hero__header--stick {
+      transform: rotate(16deg);
+      transition: transform .5s; }
+  .hero:hover .hero__subheader, .hero:active .hero__subheader {
+    transform: rotate(3deg);
+    transition: transform .4s; }
+
+.results {
+  width: 25vw;
+  background-color: #6FA0C0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center; }
+  .results__card {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    background-color: #D1E6F3;
+    width: 92%;
+    height: 16%;
+    padding: 1rem;
+    transition: transform .4s, box-shadow .4s, background-color .4s; }
+    .results__card:hover {
+      box-shadow: 4px 5px 7px -4px #171717;
+      background-color: #c4dfef;
+      transform: translateX(0.5rem);
+      transform: translateY(0.5rem);
+      transition: transform .4s, box-shadow .4s, background-color .4s; }
+      .results__card:hover .results__card--num {
+        transform: translateX(0.3rem);
+        transition: transform .4s; }
+    .results__card--num {
+      width: 3rem;
+      height: 3rem;
+      text-align: center;
+      line-height: 3rem;
+      font-size: 130%;
+      border-radius: 50%;
+      color: #6FA0C0;
+      background-color: #171717;
+      transition: transform .4s; }
+    .results__card--namebox {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 80%;
+      margin-left: 2rem;
+      height: 100%;
+      vertical-align: bottom;
+      border-bottom: 0.1rem dashed #636363; }
+      .results__card--namebox-name {
+        margin-bottom: .5rem;
+        font-size: 3.1rem;
+        color: #427698;
+        font-weight: 700; }
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 75vw;
+  background-color: #D1E6F3;
+  padding: 1rem; }
+
+.app {
+  height: 70%;
+  background-color: #1f1f1f; }
+
+.odds-panel {
+  height: 29%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; }
+  .odds-panel__card {
+    width: 13.9%;
+    text-align: center;
+    color: #171717;
+    background-color: #6FA0C0;
+    transition: background-color .4s, color .4s, transform .4s; }
+    .odds-panel__card--name {
+      font-weight: 100;
+      font-size: 120%;
+      text-align: center;
+      margin-top: .4rem; }
+      .odds-panel__card--name span {
+        display: inline-block;
+        transition: transform .4s; }
+      .odds-panel__card--name .lastname {
+        line-height: 90%;
+        font-size: 122%;
+        display: inline-block;
+        font-weight: 400; }
+    .odds-panel__card--info-box {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 1.5rem 2rem 0 2.3rem; }
+      .odds-panel__card--info-box div {
+        text-align: center; }
+        .odds-panel__card--info-box div img {
+          width: 2.5rem;
+          height: 2.5rem; }
+        .odds-panel__card--info-box div p {
+          font-weight: 200;
+          font-size: 120%;
+          margin-top: .1rem; }
+        .odds-panel__card--info-box div .icon-white {
+          display: none;
+          opacity: 0; }
+    .odds-panel__card--percentage {
+      text-align: center;
+      display: inline-block;
+      padding: .2rem 1rem .2rem 1rem;
+      border-radius: 45%;
+      font-size: 140%;
+      font-weight: 700;
+      letter-spacing: .2rem;
+      color: #D1E6F3;
+      background-color: #171717;
+      transition: background-color .4s, color .4s; }
+    .odds-panel__card.active {
+      background-color: #171717;
+      color: #fff;
+      transform: translateY(-0.4rem);
+      transition: background-color .4s, color .4s, transform .4s; }
+      .odds-panel__card.active .odds-panel__card--percentage {
+        background-color: #fff;
+        color: #171717;
+        transition: background-color .4s, color .4s; }
+      .odds-panel__card.active .icon-black {
+        display: none; }
+      .odds-panel__card.active .icon-white {
+        display: inline-block;
+        opacity: 1; }
+      .odds-panel__card.active .firstname {
+        transform: translateX(-1.8rem);
+        transition: transform .4s; }
+      .odds-panel__card.active .lastname {
+        transform: translateX(1.8rem);
+        transition: transform .4s; }
+
+.main {
+  display: flex;
+  height: 76vh; }
