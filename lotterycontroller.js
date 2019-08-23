@@ -44,49 +44,49 @@ var lotteryController = (function(){
         managersArr.forEach(function(curObj){
             // first ensure  manager has any odds of winning
             if(curObj.percentage > 0) {
-                // add the manager's name to the array as many times as their percentage number
+                // add the manager's object to the array as many times as their percentage number
                 for(let i = 0; i < curObj.percentage; i++) {
-                    lotteryArr.push(curObj.name);
+                    lotteryArr.push(curObj);
                 }
             }
         });
     }
 
     function removePickFromArray(pickedName) {
-        lotteryArr = lotteryArr.filter(name => name !== pickedName);
+        lotteryArr = lotteryArr.filter(pickedObj => pickedObj.fullName !== pickedName);
     }
 
     function pickLotteryBall(arr) {
+        // PICK WINNER AND REMOVE HIM FROM ARRAY
         // first generate a random number according to the arr length
         var randIndex = Math.floor(Math.random() * arr.length);
-        var pickedName = arr[randIndex];
+        var pickedName = arr[randIndex].fullName;
         console.log(pickedName + " was chosen!");
         // reset lotteryArr to remove winner
         removePickFromArray(pickedName);
 
         // RECALCULATE PERCENTAGES
         var newLotteryArrLength = lotteryArr.length;
-
         // get arr showing unique remaining names
         function onlyUnique(value, index, self) {
             return self.indexOf(value) === index;
         }
         var uniqueArr = lotteryArr.filter(onlyUnique);
 
-        // for each name in uniqueArr, calculate new percentage
+        // create a function that counts occurences of name in the updated lotteryArr
         function countNameOccurences(arr, nm) {
-            var nameNum = (arr.filter(el => el === nm)).length;
+            var nameNum = (arr.filter(el => el.fullName === nm)).length;
             return nameNum;
         }
+        // for each name in uniqueArr, calculate new percentage
         for(let i = 0; i < uniqueArr.length; i++) {
-            var manager = uniqueArr[i];
+            var manager = uniqueArr[i].fullName;
             // count the number of times the name occurs in the new (with winner removed) lotteryArr
             var occurences = countNameOccurences(lotteryArr, manager);
             // get the percentage of occurences out of total array length
             var adjustedOdds = Math.round(occurences / newLotteryArrLength * 100);
             console.log(manager + " now has a " + adjustedOdds + "% chance of winning.");
         }
-        
     }
 
     

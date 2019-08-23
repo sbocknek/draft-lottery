@@ -20,7 +20,7 @@ var controller = (function(lottCtrlr, UICtrlr){
             lottCtrlr.initialiseLottery();
             UICtrlr.generateOddsCards(managersArr);
             setUpEventListeners();
-            // lottCtrlr.executeLottery();
+            lottCtrlr.executeLottery();
         }
     };
 

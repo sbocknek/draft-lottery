@@ -85,4 +85,10 @@ var managersArr = [
     }
 ];
 
+// add fullName property to each object in managersArr
+for (i = 0; i < managersArr.length; i++) {
+    managersArr[i].fullName = managersArr[i].firstName + " " + managersArr[i].lastName;
+}
+
+
 const initialOddsBasedOnPrevRank = [0, 0, 0, 0, 0, 0, 0, 5, 10, 18, 28, 39];
