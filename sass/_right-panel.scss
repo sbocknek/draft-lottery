@@ -22,10 +22,11 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    // background-color: $color-dark-secondary;
+    margin: 0 -.3rem;
 
     &__card {
-        width: 13.9%;
+        flex: auto;
+        margin: 0 .3rem;
         text-align: center;
         color: $color-dark;
         background-color: $color-primary;

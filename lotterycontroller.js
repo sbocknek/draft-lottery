@@ -2,7 +2,9 @@
 
 var lotteryController = (function(){
 
+    // the array that will ultimately serve as the "lottery ball cannister"
     var lotteryArr = [];
+    // the number of percent odds granted for each trade made
     var percentOddsForEachTradeMade = 3;
     
     // set the default odds for bottom-5 finishers (ie. based on standings)

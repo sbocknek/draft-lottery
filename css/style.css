@@ -122,9 +122,11 @@ body {
   height: 29%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between; }
+  justify-content: space-between;
+  margin: 0 -.3rem; }
   .odds-panel__card {
-    width: 13.9%;
+    flex: auto;
+    margin: 0 .3rem;
     text-align: center;
     color: #171717;
     background-color: #6FA0C0;
