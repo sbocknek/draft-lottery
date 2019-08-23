@@ -56,14 +56,14 @@
             flex-flow: row nowrap;
             align-items: stretch;
             justify-content: space-between;
-            padding: 1.5rem 2rem 0 2.3rem;
+            padding: 1.1rem 1.5rem 0 1.5rem;
 
             div {
                 text-align: center;
 
                 img {
-                    width: 2.5rem;
-                    height: 2.5rem;
+                    width: 2vw;
+                    height: 2vw;
                 }
 
                 p {
@@ -84,7 +84,8 @@
             display: inline-block;
             padding: .2rem 1rem .2rem 1rem;
             border-radius: 45%;
-            font-size: 140%;
+            width: 50%;
+            font-size: 1.1vw;
             font-weight: 700;
             letter-spacing: .2rem;
             color: $color-secondary;
