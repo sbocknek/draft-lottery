@@ -1,76 +1,88 @@
 var managersArr = [
     {
-        name:   "David Mandula",
+        firstName: "David",
+        lastName: "Mandula",
         lastYearRank: 1,
         trades: 0,
         percentage: 0
     },
     {
-        name: "Seth Bocknek",
+        firstName: "Seth",
+        lastName: "Bocknek",
         lastYearRank: 2,
         trades: 2,
         percentage: 0
     },
     {
-        name: "Matin Fazelpour",
+        firstName: "Matin",
+        lastName: "Fazelpour",
         lastYearRank: 3,
         trades: 0,
         percentage: 0
     },
     {
-        name: "Andrew Carnovale",
+        firstName: "Andrew",
+        lastName: "Carnovale",
         lastYearRank: 4,
         trades: 0,
         percentage: 0
     },
     {
-        name: "Michael Spittal",
+        firstName: "Michael",
+        lastName: "Spittal",
         lastYearRank: 5,
         trades: 1,
         percentage: 0
     },
     {
-        name: "Michael Booth",
+        firstName: "Michael",
+        lastName: "Booth",
         lastYearRank: 6,
         trades: 1,
         percentage: 0
     },
     {
-        name: "Alex Glidden",
+        firstName: "Alex",
+        lastName: "Glidden",
         lastYearRank: 7,
         trades: 0,
         percentage: 0
     },
     {
-        name: "Ryan Babington",
+        firstName: "Ryan",
+        lastName: "Babington",
         lastYearRank: 8,
         trades: 0,
         percentage: 0
     },
     {
-        name: "John Davies",
+        firstName: "John",
+        lastName: "Davies",
         lastYearRank: 9,
         trades: 2,
         percentage: 0
     },
     {
-        name: "Connor Sziklasi",
+        firstName: "Connor",
+        lastName: "Sziklasi",
         lastYearRank: 10,
         trades: 0,
         percentage: 0
     },
     {
-        name: "Adam Levine",
+        firstName: "Adam",
+        lastName: "Levine",
         lastYearRank: 11,
         trades: 0,
         percentage: 0
     },
     {
-        name: "No Name",
+        firstName: "No",
+        lastName: "Name",
         lastYearRank: 12,
         trades: 0,
         percentage: 0
     }
 ];
 
-const startingOdds = [0, 0, 0, 0, 0, 0, 0, 5, 10, 18, 28, 39];
+const initialOddsBasedOnPrevRank = [0, 0, 0, 0, 0, 0, 0, 5, 10, 18, 28, 39];
