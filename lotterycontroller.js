@@ -2,6 +2,8 @@
 
 var lotteryController = (function(){
 
+    var lotteryArr = [];
+
     // the array that will ultimately serve as the "lottery ball cannister"
     // var lotteryArr = [];
     // the number of percent odds granted for each trade made
@@ -40,18 +42,17 @@ var lotteryController = (function(){
     }
 
     function generateLotteryArray() {
-        var newLotteryArr = [];
         // loop through managers to add their respective "lottery balls" to the lotteryArr
         managersArr.forEach(function(curObj){
             // first ensure  manager has any odds of winning
             if(curObj.percentage > 0) {
                 // add the manager's object to the array as many times as their percentage number
                 for(let i = 0; i < curObj.percentage; i++) {
-                    newLotteryArr.push(curObj);
+                    lotteryArr.push(curObj);
                 }
             }
         });
-        return newLotteryArr;
+        return lotteryArr;
     }
 
     // function removePickFromArray(pickedName) {
@@ -69,34 +70,44 @@ var lotteryController = (function(){
         currentPick: 1,
         initialiseLottery: function() {
             calculateStartingOdds();
+            generateLotteryArray();
         },
-        pickLotteryBall: function(){
 
+        pickLotteryBall: function() {
         // first generate a random number according to the arr length
-        var lotteryArr = generateLotteryArray();
         var randIndex = Math.floor(Math.random() * lotteryArr.length);
         var pickedObj = lotteryArr[randIndex];
         var pickedName = pickedObj.fullName;
         console.log(pickedName + " was chosen!");
         return pickedObj;
-
-        // set winning manager's percentage to 0
-        // managersArr[pickedObj.lastYearRank - 1].percentage = 0;
-
-        
-
         },
-        updateManagersArrPercentages: function() {
-            // loop through lottery array objects
-            for(i = 0; i < lotteryArr.length; i++) {
-                // for each object, find the new percentage
-                var objNums = countObjOccurences(lotteryArr, lotteryArr[i]);
-                var newPerc = Math.round(objNums / lotteryArr.length * 100);
-                
-                // set percentage of corresponding managers arr obj
-                var managersArrIndex = lotteryArr[i].lastYearRank - 1;
-                managersArr[managersArrIndex].percentage = newPerc;
+
+        removeWinnerFromLotteryArr: function(winnerObj) {
+            var filteredArr = lotteryArr.filter(pickedObj => pickedObj.fullName !== winnerObj.fullName);
+            lotteryArr = filteredArr;
+        },
+
+        updatePercentages: function() {
+            var uniqueArr = [];
+            function onlyUnique(value, index, self) {
+                return self.indexOf(value) === index;
             }
+            uniqueArr = lotteryArr.filter(onlyUnique);
+            uniqueArr.forEach(function(cur) {
+                var objCount = (lotteryArr.filter(el => el === cur)).length;
+                var newPerc = Math.round(objCount / lotteryArr.length * 100);
+                cur.percentage = newPerc;
+            });
+            lotteryArr = [];
+            uniqueArr.forEach(function(cur) {
+                for(i = 0; i < cur.percentage; i++) {
+                    lotteryArr.push(cur);
+                }
+            });
+        },
+
+        getLotteryArr: function() {
+            return lotteryArr;
         }
     };
 }());

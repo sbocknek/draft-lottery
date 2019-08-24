@@ -53,13 +53,23 @@ var UIController = (function(){
         addWinnerToResultsCard: function(obj, currPick) {
             var winnerName = obj.fullName;
             var idSelectorString = "#results-" + currPick + " " + DOMstrings.resultsCardName;
-            $(idSelectorString).append(winnerName);
+            $(idSelectorString).html(winnerName);
         },
         overlayOddsCard: function(obj, currPick) {
             var idSelector = "#" + obj.lastYearRank;
             $(idSelector).addClass("winner");
             var winnerNumSelector = idSelector + " " + DOMstrings.winnerNum;
             $(winnerNumSelector).append(currPick);
+        },
+        updateOddsCardPercentages: function(arr) {
+            arr.forEach(function(cur) {
+                var newPercentage = cur.percentage;
+                var selector = "#" + cur.lastYearRank + " .odds-panel__card--percentage";
+                $(selector).html(newPercentage + "%");
+            });
+        },
+        resetResultsCards: function() {
+            $(DOMstrings.resultsCardName).html("");
         }
     };
 }());
