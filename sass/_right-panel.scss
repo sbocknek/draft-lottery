@@ -32,6 +32,18 @@
         background-color: $color-primary;
         transition: background-color .4s, color .4s, transform .4s;
 
+        &--winner-num {
+            display: none;
+            line-height: 6vw;
+            font-size: 4.2vw;
+            width: 6vw;
+            height: 6vw;
+            font-weight: 100;
+            color: #fff;
+            border: .2rem solid #fff;
+            border-radius: 50%;
+        }
+
         &--name {
             font-weight: 100;
             font-size: 120%;
@@ -121,6 +133,32 @@
             .lastname {
                 transform: translateX(1.8rem);
                 transition: transform .4s;
+            }
+        }
+        &.winner {
+            background-color: $color-winner;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-content: stretch;
+            align-items: center;
+        
+            .odds-panel__card {
+
+                &--winner-num {
+                    display: block;
+                }
+
+                &--name {
+                    display: none;
+                }
+
+                &--info-box {
+                    display: none;
+                }
+                &--percentage {
+                    display: none;
+                }
             }
         }
 

@@ -131,6 +131,16 @@ body {
     color: #171717;
     background-color: #6FA0C0;
     transition: background-color .4s, color .4s, transform .4s; }
+    .odds-panel__card--winner-num {
+      display: none;
+      line-height: 6vw;
+      font-size: 4.2vw;
+      width: 6vw;
+      height: 6vw;
+      font-weight: 100;
+      color: #fff;
+      border: .2rem solid #fff;
+      border-radius: 50%; }
     .odds-panel__card--name {
       font-weight: 100;
       font-size: 120%;
@@ -194,6 +204,21 @@ body {
       .odds-panel__card.active .lastname {
         transform: translateX(1.8rem);
         transition: transform .4s; }
+    .odds-panel__card.winner {
+      background-color: #529723;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-content: stretch;
+      align-items: center; }
+      .odds-panel__card.winner .odds-panel__card--winner-num {
+        display: block; }
+      .odds-panel__card.winner .odds-panel__card--name {
+        display: none; }
+      .odds-panel__card.winner .odds-panel__card--info-box {
+        display: none; }
+      .odds-panel__card.winner .odds-panel__card--percentage {
+        display: none; }
 
 .main {
   display: flex;

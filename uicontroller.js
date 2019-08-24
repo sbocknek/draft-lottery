@@ -4,7 +4,8 @@ var UIController = (function(){
     // DOM strings
     var DOMstrings = {
         oddsPanel: ".odds-panel",
-        resultsCardName: ".results__card--namebox-name"
+        resultsCardName: ".results__card--namebox-name",
+        winnerNum: ".odds-panel__card--winner-num"
     }
 
     function getOrdinalString(num) {
@@ -25,7 +26,7 @@ var UIController = (function(){
     function createOddsCard(obj) {
         var percentageString = obj.percentage + "%";
         var html, newHtml;
-        html = '<div class="odds-panel__card" id="%id%"><div class="odds-panel__card--name"><span class="firstname">%firstName%</span> <br> <span class="lastname">%lastName%</span></div><div class="odds-panel__card--info-box"><div class="rank"><img src="./css/icons/podium-black.svg" class="icon-black"><img src="./css/icons/podium-white.png" class="icon-white"><p class="rank-num">%rank%</p></div><div class="trades"><img src="./css/icons/trade-black.svg" class="icon-black"><img src="./css/icons/trade-white.png" class="icon-white"><p class="trade-num">%trades%</p></div></div><div class="odds-panel__card--percentage">%percentage%</div></div>';
+        html = '<div class="odds-panel__card" id="%id%"><div class="odds-panel__card--winner-num"></div><div class="odds-panel__card--name"><span class="firstname">%firstName%</span> <br> <span class="lastname">%lastName%</span></div><div class="odds-panel__card--info-box"><div class="rank"><img src="./css/icons/podium-black.svg" class="icon-black"><img src="./css/icons/podium-white.png" class="icon-white"><p class="rank-num">%rank%</p></div><div class="trades"><img src="./css/icons/trade-black.svg" class="icon-black"><img src="./css/icons/trade-white.png" class="icon-white"><p class="trade-num">%trades%</p></div></div><div class="odds-panel__card--percentage">%percentage%</div></div>';
         
         // replace the placeholder text with actual data
         newHtml = html.replace("%firstName%", obj.firstName);
@@ -53,6 +54,12 @@ var UIController = (function(){
             var winnerName = obj.fullName;
             var idSelectorString = "#results-" + currPick + " " + DOMstrings.resultsCardName;
             $(idSelectorString).append(winnerName);
+        },
+        overlayOddsCard: function(obj, currPick) {
+            var idSelector = "#" + obj.lastYearRank;
+            $(idSelector).addClass("winner");
+            var winnerNumSelector = idSelector + " " + DOMstrings.winnerNum;
+            $(winnerNumSelector).append(currPick);
         }
     };
 }());

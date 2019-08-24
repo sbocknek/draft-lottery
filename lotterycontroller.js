@@ -66,7 +66,7 @@ var lotteryController = (function(){
     
     
     return {
-        currentPick: 5,
+        currentPick: 1,
         initialiseLottery: function() {
             calculateStartingOdds();
         },

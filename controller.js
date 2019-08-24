@@ -16,8 +16,8 @@ var controller = (function(lottCtrlr, UICtrlr){
 
     function executeLottery() {
         var winner = lottCtrlr.pickLotteryBall();
-        console.log(winner);
         UICtrlr.addWinnerToResultsCard(winner, lottCtrlr.currentPick);
+        UICtrlr.overlayOddsCard(winner, lottCtrlr.currentPick);
     }
 
     return {
