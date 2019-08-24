@@ -52,19 +52,7 @@ var lotteryController = (function(){
                 }
             }
         });
-        return lotteryArr;
     }
-
-    // function removePickFromArray(pickedName) {
-    //     lotteryArr = lotteryArr.filter(pickedObj => pickedObj.fullName !== pickedName);
-    // }
-
-    function countObjOccurences(arr, obj) {
-        var objCount = (arr.filter(el => el === obj)).length;
-        return objCount;
-    }
-
-    
     
     return {
         currentPick: 1,
@@ -104,6 +92,11 @@ var lotteryController = (function(){
                     lotteryArr.push(cur);
                 }
             });
+        },
+        resetArrays: function() {
+            lotteryArr = [];
+            calculateStartingOdds();
+            generateLotteryArray();
         },
 
         getLotteryArr: function() {

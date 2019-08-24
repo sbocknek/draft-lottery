@@ -10,10 +10,11 @@ var controller = (function(lottCtrlr, UICtrlr){
 
         // EXECUTE LOTTERY
         $(".btn").click(function(){
-            executeLottery();
-        });
-        $(".reset-btn").click(function(){
-            resetLottery();
+            if(lottCtrlr.currentPick < 6) {
+                executeLottery();
+            } else {
+                resetLottery();
+            }
         });
     };
 
@@ -32,14 +33,24 @@ var controller = (function(lottCtrlr, UICtrlr){
         UICtrlr.updateOddsCardPercentages(latestLotteryArr);
         // 6. increment current pick
         lottCtrlr.currentPick++;
+        // 7. change button reset if 5 picks
+        if(lottCtrlr.currentPick > 5) {
+            UICtrlr.makeBtnReset();
+        }
     }
 
     function resetLottery() {
         // 1. remove names from results cards
         UICtrlr.resetResultsCards();
         // 2. reset lottery array
+        lottCtrlr.resetArrays();
         // 3. reset odds cards
+        var refreshedLotteryArr = lottCtrlr.getLotteryArr();
+        UICtrlr.resetOddsCards(refreshedLotteryArr);
         // 4. reset current pick
+        lottCtrlr.currentPick = 1;
+        // 5. reset button text
+        UICtrlr.makeBtnRoll();
     }
 
     return {
