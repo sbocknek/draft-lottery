@@ -3,7 +3,8 @@ var UIController = (function(){
 
     // DOM strings
     var DOMstrings = {
-        oddsPanel: ".odds-panel"
+        oddsPanel: ".odds-panel",
+        resultsCardName: ".results__card--namebox-name"
     }
 
     function getOrdinalString(num) {
@@ -24,7 +25,7 @@ var UIController = (function(){
     function createOddsCard(obj) {
         var percentageString = obj.percentage + "%";
         var html, newHtml;
-        html = '<div class="odds-panel__card"><div class="odds-panel__card--name"><span class="firstname">%firstName%</span> <br> <span class="lastname">%lastName%</span></div><div class="odds-panel__card--info-box"><div class="rank"><img src="./css/icons/podium-black.svg" class="icon-black"><img src="./css/icons/podium-white.png" class="icon-white"><p class="rank-num">%rank%</p></div><div class="trades"><img src="./css/icons/trade-black.svg" class="icon-black"><img src="./css/icons/trade-white.png" class="icon-white"><p class="trade-num">%trades%</p></div></div><div class="odds-panel__card--percentage">%percentage%</div></div>';
+        html = '<div class="odds-panel__card" id="%id%"><div class="odds-panel__card--name"><span class="firstname">%firstName%</span> <br> <span class="lastname">%lastName%</span></div><div class="odds-panel__card--info-box"><div class="rank"><img src="./css/icons/podium-black.svg" class="icon-black"><img src="./css/icons/podium-white.png" class="icon-white"><p class="rank-num">%rank%</p></div><div class="trades"><img src="./css/icons/trade-black.svg" class="icon-black"><img src="./css/icons/trade-white.png" class="icon-white"><p class="trade-num">%trades%</p></div></div><div class="odds-panel__card--percentage">%percentage%</div></div>';
         
         // replace the placeholder text with actual data
         newHtml = html.replace("%firstName%", obj.firstName);
@@ -32,6 +33,7 @@ var UIController = (function(){
         newHtml = newHtml.replace("%rank%", getOrdinalString(obj.lastYearRank));
         newHtml = newHtml.replace("%trades%", obj.trades);
         newHtml = newHtml.replace("%percentage%", percentageString);
+        newHtml = newHtml.replace("%id%", obj.lastYearRank);
 
         // insert the HTML into the DOM
         $(DOMstrings.oddsPanel).prepend(newHtml);
@@ -40,12 +42,17 @@ var UIController = (function(){
     
 
     return {
-        generateOddsCards: function(arr){
-            arr.forEach(function(curr){
+        generateOddsCards: function(arr) {
+            arr.forEach(function(curr) {
                 if(curr.percentage > 0) {
                     createOddsCard(curr);
                 }
             });
+        },
+        addWinnerToResultsCard: function(obj, currPick) {
+            var winnerName = obj.fullName;
+            var idSelectorString = "#results-" + currPick + " " + DOMstrings.resultsCardName;
+            $(idSelectorString).append(winnerName);
         }
     };
 }());

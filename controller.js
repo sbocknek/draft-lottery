@@ -10,9 +10,15 @@ var controller = (function(lottCtrlr, UICtrlr){
 
         // EXECUTE LOTTERY
         $(".btn").click(function(){
-            console.log("button clicked!");
+            executeLottery();
         });
     };
+
+    function executeLottery() {
+        var winner = lottCtrlr.pickLotteryBall();
+        console.log(winner);
+        UICtrlr.addWinnerToResultsCard(winner, lottCtrlr.currentPick);
+    }
 
     return {
         init: function() {
@@ -20,7 +26,6 @@ var controller = (function(lottCtrlr, UICtrlr){
             lottCtrlr.initialiseLottery();
             UICtrlr.generateOddsCards(managersArr);
             setUpEventListeners();
-            lottCtrlr.executeLottery();
         }
     };
 
