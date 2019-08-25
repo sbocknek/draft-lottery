@@ -116,7 +116,62 @@ body {
 
 .app {
   height: 70%;
-  background-color: #1f1f1f; }
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch; }
+  .app__left {
+    width: 65%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: space-between; }
+    .app__left--btn-container {
+      margin-bottom: 2vw;
+      text-align: center; }
+      .app__left--btn-container-btn, .app__left--btn-container-btn:link, .app__left--btn-container-btn:visited {
+        transition: all 0.4s;
+        display: inline-block;
+        text-decoration: none;
+        border: none;
+        border-radius: 1.8rem;
+        font-weight: 200;
+        padding: .7vw 1.5vw;
+        background-color: #1f1f1f;
+        color: #fff;
+        cursor: pointer; }
+        .app__left--btn-container-btn i, .app__left--btn-container-btn:link i, .app__left--btn-container-btn:visited i {
+          transition: all 0.4s;
+          margin-left: .7vw;
+          font-size: 80%; }
+        .app__left--btn-container-btn .btn-text, .app__left--btn-container-btn:link .btn-text, .app__left--btn-container-btn:visited .btn-text {
+          transition: all 0.4s;
+          display: inline-block; }
+        .app__left--btn-container-btn.btn-roll, .app__left--btn-container-btn:link.btn-roll, .app__left--btn-container-btn:visited.btn-roll {
+          background-color: #b31b1b;
+          font-size: 1.8vw;
+          padding: .7vw 2.3vw; }
+        .app__left--btn-container-btn.btn-reset, .app__left--btn-container-btn:link.btn-reset, .app__left--btn-container-btn:visited.btn-reset {
+          background-color: #335a74;
+          font-size: 1.6vw; }
+      .app__left--btn-container-btn:hover {
+        transition: all 0.4s;
+        transform: translateY(-0.2vw);
+        background-color: #1f1f1f;
+        border-radius: 3rem;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+        .app__left--btn-container-btn:hover i {
+          transform: translateX(0.3vw); }
+        .app__left--btn-container-btn:hover .btn-text {
+          transition: all 0.4s;
+          transform: translateX(-0.3vw); }
+      .app__left--btn-container-btn:active, .app__left--btn-container-btn:focus {
+        outline: none;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+      .app__left--btn-container-btn:first-of-type {
+        margin-right: 9vw; }
+  .app__right {
+    width: 35%;
+    background-color: #1f1f1f; }
 
 .odds-panel {
   height: 29%;

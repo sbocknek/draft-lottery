@@ -10,7 +10,92 @@
 
 .app {
     height: 70%;
-    background-color: $color-dark-secondary;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+
+    &__left {
+        width: 65%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        justify-content: space-between;
+        // background-color: $color-primary;
+
+        &--btn-container {
+            margin-bottom: 2vw;
+            text-align: center;
+
+            &-btn, &-btn:link, &-btn:visited {
+                transition: all 0.4s;
+                display: inline-block;
+                text-decoration: none;
+                border: none;
+                border-radius: 1.8rem;
+                font-weight: 200;
+                padding: .7vw 1.5vw;
+                background-color: $color-dark-secondary;
+                color: #fff;
+                cursor: pointer;
+
+                i {
+                    transition: all 0.4s;
+                    margin-left: .7vw;
+                    font-size: 80%;
+                }
+
+                .btn-text {
+                    transition: all 0.4s;
+                    display: inline-block;
+                }
+
+                &.btn-roll {
+                    background-color: $color-button-roll;
+                    font-size: 1.8vw;
+                    padding: .7vw 2.3vw;
+                }
+
+                &.btn-reset {
+                    background-color: $color-button-reset;
+                    font-size: 1.6vw;
+                }
+            }
+
+            &-btn:hover {
+                transition: all 0.4s;
+                transform: translateY(-0.2vw);
+                background-color: $color-dark-secondary;
+                border-radius: 3rem;
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+                i {
+                    transform: translateX(.3vw);
+                }
+
+                .btn-text {
+                    transition: all 0.4s;
+                    transform: translateX(-.3vw);
+                }
+            }
+            
+            &-btn:active, &-btn:focus {
+                outline: none;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+            }
+
+            &-btn:first-of-type {
+                margin-right: 9vw;
+            }
+
+
+
+        }
+    }
+    &__right {
+        width: 35%;
+        background-color: $color-dark-secondary;
+    }
+    
 }
 
 /////////////////////

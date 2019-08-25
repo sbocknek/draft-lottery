@@ -7,7 +7,7 @@ var UIController = (function(){
         resultsCardName: ".results__card--namebox-name",
         winnerNum: ".odds-panel__card--winner-num",
         oddsPanelCard: ".odds-panel__card",
-        lotteryButton: ".btn"
+        lotteryButton: ".app__left--btn"
     }
 
     function getOrdinalString(num) {
@@ -83,6 +83,9 @@ var UIController = (function(){
         },
         makeBtnRoll: function() {
             $(DOMstrings.lotteryButton).html("Roll");
+        },
+        getDOMStrings: function() {
+            return DOMstrings;
         }
     };
 }());

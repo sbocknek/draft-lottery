@@ -1,6 +1,8 @@
 // GLOBAL APP CONTROLLER
 var controller = (function(lottCtrlr, UICtrlr){
 
+    var DOM = UICtrlr.getDOMStrings();
+
     var setUpEventListeners = function() {
 
         // HOVER ODDS CARDS
@@ -9,7 +11,7 @@ var controller = (function(lottCtrlr, UICtrlr){
         });
 
         // EXECUTE LOTTERY
-        $(".btn").click(function(){
+        $(DOM.lotteryButton).click(function(){
             if(lottCtrlr.currentPick < 6) {
                 executeLottery();
             } else {
