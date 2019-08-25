@@ -49,7 +49,7 @@ body {
     letter-spacing: .2rem;
     transition: letter-spacing .5s; }
     .hero:hover .hero__header--stick, .hero:active .hero__header--stick {
-      transform: rotate(16deg);
+      transform: rotate(360deg) translateX(2vw);
       transition: transform .5s; }
   .hero:hover .hero__subheader, .hero:active .hero__subheader {
     transform: rotate(3deg);
@@ -101,8 +101,8 @@ body {
       border-bottom: 0.1rem dashed #636363; }
       .results__card--namebox-name {
         margin-bottom: .5rem;
-        font-size: 2.1rem;
-        color: #427698;
+        font-size: 1.8vw;
+        color: #1e3645;
         font-weight: 700; }
 
 .right-side {
@@ -112,7 +112,7 @@ body {
   justify-content: space-between;
   width: 75vw;
   background-color: #D1E6F3;
-  padding: 1rem; }
+  padding-bottom: .2rem; }
 
 .app {
   height: 70%;
@@ -134,25 +134,33 @@ body {
         text-decoration: none;
         border: none;
         border-radius: 1.8rem;
-        font-weight: 200;
+        font-size: 1.7vw;
+        font-weight: 100;
         padding: .7vw 1.5vw;
         background-color: #1f1f1f;
         color: #fff;
         cursor: pointer; }
         .app__left--btn-container-btn i, .app__left--btn-container-btn:link i, .app__left--btn-container-btn:visited i {
           transition: all 0.4s;
-          margin-left: .7vw;
-          font-size: 80%; }
+          margin-left: .7vw; }
         .app__left--btn-container-btn .btn-text, .app__left--btn-container-btn:link .btn-text, .app__left--btn-container-btn:visited .btn-text {
           transition: all 0.4s;
           display: inline-block; }
-        .app__left--btn-container-btn.btn-roll, .app__left--btn-container-btn:link.btn-roll, .app__left--btn-container-btn:visited.btn-roll {
+        .app__left--btn-container-btn.btn-pick, .app__left--btn-container-btn:link.btn-pick, .app__left--btn-container-btn:visited.btn-pick {
           background-color: #b31b1b;
-          font-size: 1.8vw;
           padding: .7vw 2.3vw; }
+          .app__left--btn-container-btn.btn-pick i, .app__left--btn-container-btn:link.btn-pick i, .app__left--btn-container-btn:visited.btn-pick i {
+            font-size: 90%; }
+          .app__left--btn-container-btn.btn-pick.cannot-pick, .app__left--btn-container-btn:link.btn-pick.cannot-pick, .app__left--btn-container-btn:visited.btn-pick.cannot-pick {
+            transform: translateY(-12rem);
+            opacity: 0;
+            visibility: hidden; }
+            .app__left--btn-container-btn.btn-pick.cannot-pick + button, .app__left--btn-container-btn:link.btn-pick.cannot-pick + button, .app__left--btn-container-btn:visited.btn-pick.cannot-pick + button {
+              transform: translateX(-9.5vw); }
         .app__left--btn-container-btn.btn-reset, .app__left--btn-container-btn:link.btn-reset, .app__left--btn-container-btn:visited.btn-reset {
-          background-color: #335a74;
-          font-size: 1.6vw; }
+          background-color: #335a74; }
+          .app__left--btn-container-btn.btn-reset i, .app__left--btn-container-btn:link.btn-reset i, .app__left--btn-container-btn:visited.btn-reset i {
+            font-size: 80%; }
       .app__left--btn-container-btn:hover {
         transition: all 0.4s;
         transform: translateY(-0.2vw);
@@ -178,7 +186,8 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 0 -.3rem; }
+  margin: 0 -.3rem;
+  padding: 0 .5rem .2rem .5rem; }
   .odds-panel__card {
     flex: auto;
     margin: 0 .3rem;

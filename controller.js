@@ -10,13 +10,16 @@ var controller = (function(lottCtrlr, UICtrlr){
             $(this).toggleClass("active");
         });
 
-        // EXECUTE LOTTERY
-        $(DOM.lotteryButton).click(function(){
+        // ROLL LOTTERY
+        $(DOM.pickButton).click(function(){
             if(lottCtrlr.currentPick < 6) {
                 executeLottery();
-            } else {
-                resetLottery();
             }
+        });
+
+        // RESET LOTTERY
+        $(DOM.resetButton).click(function() {
+            resetLottery();
         });
     };
 
@@ -35,9 +38,9 @@ var controller = (function(lottCtrlr, UICtrlr){
         UICtrlr.updateOddsCardPercentages(latestLotteryArr);
         // 6. increment current pick
         lottCtrlr.currentPick++;
-        // 7. change button reset if 5 picks
-        if(lottCtrlr.currentPick > 5) {
-            UICtrlr.makeBtnReset();
+        // 7. if all five picks have been drawn, animate out the pick button
+        if(lottCtrlr.currentPick === 6) {
+            UICtrlr.hidePickButton();
         }
     }
 
@@ -51,8 +54,8 @@ var controller = (function(lottCtrlr, UICtrlr){
         UICtrlr.resetOddsCards(refreshedLotteryArr);
         // 4. reset current pick
         lottCtrlr.currentPick = 1;
-        // 5. reset button text
-        UICtrlr.makeBtnRoll();
+        // 5. make sure pick button is showing
+        UICtrlr.showPickButton();
     }
 
     return {

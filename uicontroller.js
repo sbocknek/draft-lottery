@@ -1,3 +1,4 @@
+
 // UI Controller
 var UIController = (function(){
 
@@ -7,7 +8,8 @@ var UIController = (function(){
         resultsCardName: ".results__card--namebox-name",
         winnerNum: ".odds-panel__card--winner-num",
         oddsPanelCard: ".odds-panel__card",
-        lotteryButton: ".app__left--btn"
+        pickButton: ".app__left--btn-container-btn.btn-pick",
+        resetButton: ".app__left--btn-container-btn.btn-reset"
     }
 
     function getOrdinalString(num) {
@@ -78,11 +80,11 @@ var UIController = (function(){
             $(DOMstrings.winnerNum).html("");
             this.updateOddsCardPercentages(refreshedLottArr);
         },
-        makeBtnReset: function() {
-            $(DOMstrings.lotteryButton).html("Reset");
+        hidePickButton: function() {
+            $(DOMstrings.pickButton).addClass("cannot-pick");
         },
-        makeBtnRoll: function() {
-            $(DOMstrings.lotteryButton).html("Roll");
+        showPickButton: function() {
+            $(DOMstrings.pickButton).removeClass("cannot-pick");
         },
         getDOMStrings: function() {
             return DOMstrings;

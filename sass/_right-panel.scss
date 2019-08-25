@@ -5,7 +5,7 @@
     justify-content: space-between;
     width: 75vw;
     background-color: $color-secondary;
-    padding: 1rem;
+    padding-bottom: .2rem;
 }
 
 .app {
@@ -32,7 +32,8 @@
                 text-decoration: none;
                 border: none;
                 border-radius: 1.8rem;
-                font-weight: 200;
+                font-size: 1.7vw;
+                font-weight: 100;
                 padding: .7vw 1.5vw;
                 background-color: $color-dark-secondary;
                 color: #fff;
@@ -41,7 +42,7 @@
                 i {
                     transition: all 0.4s;
                     margin-left: .7vw;
-                    font-size: 80%;
+                    
                 }
 
                 .btn-text {
@@ -49,15 +50,31 @@
                     display: inline-block;
                 }
 
-                &.btn-roll {
-                    background-color: $color-button-roll;
-                    font-size: 1.8vw;
+                &.btn-pick {
+                    background-color: $color-button-pick;
                     padding: .7vw 2.3vw;
+
+                    i {
+                        font-size: 90%;
+                    }
+
+                    &.cannot-pick {
+                        transform: translateY(-12rem);
+                        opacity: 0;
+                        visibility: hidden;
+
+                        & + button {
+                            transform: translateX(-9.5vw);
+                        }
+                    }
                 }
 
                 &.btn-reset {
                     background-color: $color-button-reset;
-                    font-size: 1.6vw;
+
+                    i {
+                        font-size: 80%;
+                    }
                 }
             }
 
@@ -108,6 +125,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     margin: 0 -.3rem;
+    padding: 0 .5rem .2rem .5rem;
 
     &__card {
         flex: auto;

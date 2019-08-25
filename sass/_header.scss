@@ -51,7 +51,7 @@
                 transition: letter-spacing .5s;
                 
                 &--stick {
-                    transform: rotate(16deg);
+                    transform: rotate(360deg) translateX(2vw);
                     transition: transform .5s; 
                 }
             }
