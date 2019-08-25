@@ -9,7 +9,8 @@ var UIController = (function(){
         winnerNum: ".odds-panel__card--winner-num",
         oddsPanelCard: ".odds-panel__card",
         pickButton: ".app__left--btn-container-btn.btn-pick",
-        resetButton: ".app__left--btn-container-btn.btn-reset"
+        resetButton: ".app__left--btn-container-btn.btn-reset",
+        draftOrderName: ".draft-order__pick-box--name"
     }
 
     function getOrdinalString(num) {
@@ -85,6 +86,16 @@ var UIController = (function(){
         },
         showPickButton: function() {
             $(DOMstrings.pickButton).removeClass("cannot-pick");
+        },
+        populateDraftOrder: function(draftOrderArr) {
+            for(i = 0; i < draftOrderArr.length; i++) {
+                var curName = draftOrderArr[i];
+                var selectorStr = "#pick-" + (i + 1) + " " + DOMstrings.draftOrderName;
+                $(selectorStr).html(curName); 
+            }
+        },
+        resetDraftOrder: function() {
+            $(DOMstrings.draftOrderName).html("");
         },
         getDOMStrings: function() {
             return DOMstrings;

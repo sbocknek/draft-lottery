@@ -41,6 +41,10 @@ var controller = (function(lottCtrlr, UICtrlr){
         // 7. if all five picks have been drawn, animate out the pick button
         if(lottCtrlr.currentPick === 6) {
             UICtrlr.hidePickButton();
+            // finish remainder of draft lottery array
+            var draftOrder = lottCtrlr.completeDraftOrder();
+            // add draft order array to UI
+            UICtrlr.populateDraftOrder(draftOrder);
         }
     }
 
@@ -56,6 +60,8 @@ var controller = (function(lottCtrlr, UICtrlr){
         lottCtrlr.currentPick = 1;
         // 5. make sure pick button is showing
         UICtrlr.showPickButton();
+        // 6. clear draft order from UI
+        UICtrlr.resetDraftOrder();
     }
 
     return {

@@ -3,6 +3,7 @@
 var lotteryController = (function(){
 
     var lotteryArr = [];
+    var draftOrderArr = [];
 
     // the array that will ultimately serve as the "lottery ball cannister"
     // var lotteryArr = [];
@@ -65,8 +66,9 @@ var lotteryController = (function(){
         // first generate a random number according to the arr length
         var randIndex = Math.floor(Math.random() * lotteryArr.length);
         var pickedObj = lotteryArr[randIndex];
-        var pickedName = pickedObj.fullName;
-        console.log(pickedName + " was chosen!");
+        // add the chosen manager to the draft order array
+        draftOrderArr.push(pickedObj.fullName);
+        // return the chosen lottery ball object to the main controller
         return pickedObj;
         },
 
@@ -77,15 +79,18 @@ var lotteryController = (function(){
 
         updatePercentages: function() {
             var uniqueArr = [];
+            // a function for filtering the lottery array into unique values (only one object per manager)
             function onlyUnique(value, index, self) {
                 return self.indexOf(value) === index;
             }
             uniqueArr = lotteryArr.filter(onlyUnique);
+            // for each unique manager, recalc and update his obj percentage
             uniqueArr.forEach(function(cur) {
                 var objCount = (lotteryArr.filter(el => el === cur)).length;
                 var newPerc = Math.round(objCount / lotteryArr.length * 100);
                 cur.percentage = newPerc;
             });
+            // based on the newly updated percentage property, reset and repopulate lotteryArr
             lotteryArr = [];
             uniqueArr.forEach(function(cur) {
                 for(i = 0; i < cur.percentage; i++) {
@@ -95,12 +100,28 @@ var lotteryController = (function(){
         },
         resetArrays: function() {
             lotteryArr = [];
+            draftOrderArr = [];
             calculateStartingOdds();
             generateLotteryArray();
+        },
+        completeDraftOrder: function() {
+            // loop through managers array backwards
+            for (i = managersArr.length - 1; i >= 0; i--) {
+                var currentManagerFullName = managersArr[i].fullName;
+                // check if the current manager is already in the draft order
+                if(draftOrderArr.indexOf(currentManagerFullName) < 0) {
+                    // if not, add him
+                    draftOrderArr.push(currentManagerFullName);
+                }
+            }
+            return draftOrderArr;
         },
 
         getLotteryArr: function() {
             return lotteryArr;
+        },
+        getDraftOrderArr: function() {
+            return draftOrderArr;
         }
     };
 }());
