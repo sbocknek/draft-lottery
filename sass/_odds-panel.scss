@@ -1,0 +1,152 @@
+/////////////////////
+//// ODDS PANEL
+/////////////////
+
+.odds-panel {
+    height: 29%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 0 -.3rem;
+    padding: 0 .5rem .2rem .5rem;
+
+    &__card {
+        flex: auto;
+        margin: 0 .3rem;
+        text-align: center;
+        color: $color-dark;
+        background-color: $color-primary;
+        transition: background-color .4s, color .4s, transform .4s;
+
+        &--winner-num {
+            display: none;
+            line-height: 6vw;
+            font-size: 4.2vw;
+            width: 6vw;
+            height: 6vw;
+            font-weight: 100;
+            color: #fff;
+            border: .2rem solid #fff;
+            border-radius: 50%;
+        }
+
+        &--name {
+            font-weight: 100;
+            font-size: 120%;
+            text-align: center;
+            margin-top: .4rem;
+
+            span {
+                display: inline-block;
+                transition: transform .4s;
+            }
+
+            .lastname {
+                line-height: 90%;
+                font-size: 122%;
+                display: inline-block;
+                font-weight: 400;
+            }
+        }
+
+        &--info-box {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: stretch;
+            justify-content: space-between;
+            padding: 1.1rem 1.5rem 0 1.5rem;
+
+            div {
+                text-align: center;
+
+                img {
+                    width: 2vw;
+                    height: 2vw;
+                }
+
+                p {
+                    font-weight: 200;
+                    font-size: 120%;
+                    margin-top: .1rem;
+                }
+
+                .icon-white {
+                    display: none;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &--percentage {
+            text-align: center;
+            display: inline-block;
+            padding: .2rem 1rem .2rem 1rem;
+            border-radius: 45%;
+            width: 50%;
+            font-size: 1.1vw;
+            font-weight: 700;
+            letter-spacing: .2rem;
+            color: $color-secondary;
+            background-color: $color-dark;
+            transition: background-color .4s, color .4s;
+        }
+
+        &.active {
+            background-color: $color-dark;
+            color: #fff;
+            transform: translateY(-.4rem);
+            transition: background-color .4s, color .4s, transform .4s;
+
+            .odds-panel__card--percentage {
+                background-color: #fff;
+                color: $color-dark;
+                transition: background-color .4s, color .4s;
+            }
+
+            .icon-black {
+                display: none;
+            }
+            .icon-white {
+                display: inline-block;
+                opacity: 1;
+            }
+
+            .firstname {
+                transform: translateX(-1.8rem);
+                transition: transform .4s;
+            }
+
+            .lastname {
+                transform: translateX(1.8rem);
+                transition: transform .4s;
+            }
+        }
+        &.winner {
+            background-color: $color-winner;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-content: stretch;
+            align-items: center;
+        
+            .odds-panel__card {
+
+                &--winner-num {
+                    display: block;
+                }
+
+                &--name {
+                    display: none;
+                }
+
+                &--info-box {
+                    display: none;
+                }
+                &--percentage {
+                    display: none;
+                }
+            }
+        }
+
+    }
+}

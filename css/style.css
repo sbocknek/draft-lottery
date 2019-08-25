@@ -120,7 +120,7 @@ body {
   flex-flow: row nowrap;
   align-items: stretch; }
   .app__left {
-    width: 65%;
+    width: 75%;
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
@@ -206,9 +206,41 @@ body {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
       .app__left--btn-container-btn:first-of-type {
         margin-right: 9vw; }
-  .app__right {
-    width: 35%;
-    background-color: #1f1f1f; }
+
+.draft-order {
+  width: 25%;
+  background-color: #1f1f1f;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  color: #fff;
+  padding: .5rem 0 1.2rem 0; }
+  .draft-order__title {
+    color: #fff;
+    align-self: center;
+    font-size: 1.3vw; }
+  .draft-order__pick-box {
+    align-self: stretch;
+    margin-left: 5rem; }
+    .draft-order__pick-box--num {
+      color: #1f1f1f;
+      background-color: #fff;
+      display: inline-block;
+      text-align: center;
+      font-size: 1rem;
+      margin-left: .5rem;
+      border: .1rem solid #fff;
+      border-radius: 50%;
+      width: 1.7rem;
+      height: 1.7rem; }
+    .draft-order__pick-box--name {
+      text-align: center;
+      display: inline-block;
+      margin-left: 2rem; }
+
+.main {
+  display: flex;
+  height: 76vh; }
 
 .odds-panel {
   height: 29%;
@@ -312,7 +344,3 @@ body {
         display: none; }
       .odds-panel__card.winner .odds-panel__card--percentage {
         display: none; }
-
-.main {
-  display: flex;
-  height: 76vh; }
