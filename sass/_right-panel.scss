@@ -20,10 +20,51 @@
         flex-flow: column nowrap;
         align-items: stretch;
         justify-content: space-between;
+        padding: .5rem .5rem 0 .5rem;
         // background-color: $color-primary;
 
+        &--overview {
+            // background-color: $color-dark-secondary;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            height: 25rem;
+
+            &-title {
+                display: inline-block;
+                color: #fff;
+                font-size: 2vw;
+                font-weight: 500;
+                background-color: $color-dark-secondary;
+                padding: .4rem 3.8rem;
+                margin-top: 1.5rem;
+                font-variant: small-caps;
+                letter-spacing: .1rem;
+                clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+            }
+
+            &-text {
+                
+                color: $color-dark;
+                width: 47vw;
+                font-weight: 200;
+                font-size: 1.3vw;
+                padding: .5rem;
+
+                &:nth-of-type(2n) {
+                    background-color: $color-primary;
+                    color: #fff;
+                }
+
+                &:first-of-type {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+
         &--btn-container {
-            margin-bottom: 2vw;
+            margin-bottom: 1vw;
             text-align: center;
 
             &-btn, &-btn:link, &-btn:visited {

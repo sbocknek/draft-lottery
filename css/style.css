@@ -17,7 +17,7 @@ body {
   height: 24vh; }
   .hero__header {
     color: #6FA0C0;
-    font-size: 5.8rem;
+    font-size: 4.3vw;
     font-weight: 800;
     text-align: center;
     padding-top: 1rem;
@@ -124,9 +124,38 @@ body {
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
-    justify-content: space-between; }
+    justify-content: space-between;
+    padding: .5rem .5rem 0 .5rem; }
+    .app__left--overview {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      height: 25rem; }
+      .app__left--overview-title {
+        display: inline-block;
+        color: #fff;
+        font-size: 2vw;
+        font-weight: 500;
+        background-color: #1f1f1f;
+        padding: .4rem 3.8rem;
+        margin-top: 1.5rem;
+        font-variant: small-caps;
+        letter-spacing: .1rem;
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
+      .app__left--overview-text {
+        color: #171717;
+        width: 47vw;
+        font-weight: 200;
+        font-size: 1.3vw;
+        padding: .5rem; }
+        .app__left--overview-text:nth-of-type(2n) {
+          background-color: #6FA0C0;
+          color: #fff; }
+        .app__left--overview-text:first-of-type {
+          margin-top: 1.5rem; }
     .app__left--btn-container {
-      margin-bottom: 2vw;
+      margin-bottom: 1vw;
       text-align: center; }
       .app__left--btn-container-btn, .app__left--btn-container-btn:link, .app__left--btn-container-btn:visited {
         transition: all 0.4s;
