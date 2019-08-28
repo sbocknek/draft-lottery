@@ -17,7 +17,7 @@ body {
   height: 24vh; }
   .hero__header {
     color: #6FA0C0;
-    font-size: 4.3vw;
+    font-size: 6rem;
     font-weight: 800;
     text-align: center;
     padding-top: 1rem;
@@ -32,7 +32,7 @@ body {
       margin-top: -.5rem; }
     .hero__header--stick {
       display: inline-block;
-      transition: transform .5s; }
+      transition: transform .5s ease-in-out; }
   .hero__subheader {
     color: #fff;
     font-size: 2.2rem;
@@ -49,14 +49,14 @@ body {
     letter-spacing: .2rem;
     transition: letter-spacing .5s; }
     .hero:hover .hero__header--stick, .hero:active .hero__header--stick {
-      transform: rotate(360deg) translateX(2vw);
-      transition: transform .5s; }
+      transform: rotate(360deg) translateX(5rem);
+      transition: transform .5s ease-in-out; }
   .hero:hover .hero__subheader, .hero:active .hero__subheader {
     transform: rotate(3deg);
     transition: transform .4s; }
 
 .results {
-  width: 25vw;
+  width: 22vw;
   background-color: #6FA0C0;
   display: flex;
   flex-flow: column nowrap;
@@ -81,13 +81,13 @@ body {
         transform: translateX(0.3rem);
         transition: transform .4s; }
     .results__card--num {
-      width: 3rem;
-      height: 3rem;
+      width: 3.2rem;
+      height: 3.2rem;
       text-align: center;
-      line-height: 3rem;
-      font-size: 130%;
+      line-height: 3.2rem;
+      font-size: 1.6rem;
       border-radius: 50%;
-      color: #6FA0C0;
+      color: #fff;
       background-color: #171717;
       transition: transform .4s; }
     .results__card--namebox {
@@ -101,7 +101,7 @@ body {
       border-bottom: 0.1rem dashed #636363; }
       .results__card--namebox-name {
         margin-bottom: .5rem;
-        font-size: 1.8vw;
+        font-size: 2.2rem;
         color: #1e3645;
         font-weight: 700; }
 
@@ -110,7 +110,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
-  width: 75vw;
+  width: 78vw;
   background-color: #D1E6F3;
   padding-bottom: .2rem; }
 
@@ -120,7 +120,7 @@ body {
   flex-flow: row nowrap;
   align-items: stretch; }
   .app__left {
-    width: 75%;
+    width: 80%;
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
@@ -135,7 +135,7 @@ body {
       .app__left--overview-title {
         display: inline-block;
         color: #fff;
-        font-size: 2vw;
+        font-size: 2.5rem;
         font-weight: 500;
         background-color: #1f1f1f;
         padding: .4rem 3.8rem;
@@ -145,9 +145,8 @@ body {
         clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); }
       .app__left--overview-text {
         color: #171717;
-        width: 47vw;
         font-weight: 200;
-        font-size: 1.3vw;
+        font-size: 1.8rem;
         padding: .5rem; }
         .app__left--overview-text:nth-of-type(2n) {
           background-color: #6FA0C0;
@@ -155,7 +154,7 @@ body {
         .app__left--overview-text:first-of-type {
           margin-top: 1.5rem; }
     .app__left--btn-container {
-      margin-bottom: 1vw;
+      margin-bottom: 1.2rem;
       text-align: center; }
       .app__left--btn-container-btn, .app__left--btn-container-btn:link, .app__left--btn-container-btn:visited {
         transition: all 0.4s;
@@ -163,21 +162,20 @@ body {
         text-decoration: none;
         border: none;
         border-radius: 1.8rem;
-        font-size: 1.7vw;
+        font-size: 2.3rem;
         font-weight: 100;
-        padding: .7vw 1.5vw;
+        padding: 1rem 2rem;
         background-color: #1f1f1f;
         color: #fff;
         cursor: pointer; }
         .app__left--btn-container-btn i, .app__left--btn-container-btn:link i, .app__left--btn-container-btn:visited i {
           transition: all 0.4s;
-          margin-left: .7vw; }
+          margin-left: .8rem; }
         .app__left--btn-container-btn .btn-text, .app__left--btn-container-btn:link .btn-text, .app__left--btn-container-btn:visited .btn-text {
           transition: all 0.4s;
           display: inline-block; }
         .app__left--btn-container-btn.btn-pick, .app__left--btn-container-btn:link.btn-pick, .app__left--btn-container-btn:visited.btn-pick {
-          background-color: #b31b1b;
-          padding: .7vw 2.3vw; }
+          background-color: #b31b1b; }
           .app__left--btn-container-btn.btn-pick i, .app__left--btn-container-btn:link.btn-pick i, .app__left--btn-container-btn:visited.btn-pick i {
             font-size: 90%; }
           .app__left--btn-container-btn.btn-pick.cannot-pick, .app__left--btn-container-btn:link.btn-pick.cannot-pick, .app__left--btn-container-btn:visited.btn-pick.cannot-pick {
@@ -185,30 +183,29 @@ body {
             opacity: 0;
             visibility: hidden; }
             .app__left--btn-container-btn.btn-pick.cannot-pick + button, .app__left--btn-container-btn:link.btn-pick.cannot-pick + button, .app__left--btn-container-btn:visited.btn-pick.cannot-pick + button {
-              transform: translateX(-9.5vw); }
+              transform: translateX(-12rem); }
         .app__left--btn-container-btn.btn-reset, .app__left--btn-container-btn:link.btn-reset, .app__left--btn-container-btn:visited.btn-reset {
           background-color: #335a74; }
           .app__left--btn-container-btn.btn-reset i, .app__left--btn-container-btn:link.btn-reset i, .app__left--btn-container-btn:visited.btn-reset i {
             font-size: 80%; }
       .app__left--btn-container-btn:hover {
         transition: all 0.4s;
-        transform: translateY(-0.2vw);
+        transform: translateY(-0.2rem);
         background-color: #1f1f1f;
         border-radius: 3rem;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
         .app__left--btn-container-btn:hover i {
-          transform: translateX(0.3vw); }
+          transform: translateX(0.3rem); }
         .app__left--btn-container-btn:hover .btn-text {
-          transition: all 0.4s;
-          transform: translateX(-0.3vw); }
+          transition: all 0.4s; }
       .app__left--btn-container-btn:active, .app__left--btn-container-btn:focus {
         outline: none;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
       .app__left--btn-container-btn:first-of-type {
-        margin-right: 9vw; }
+        margin-right: 8rem; }
 
 .draft-order {
-  width: 25%;
+  width: 20%;
   background-color: #1f1f1f;
   display: flex;
   flex-flow: column nowrap;
@@ -218,10 +215,10 @@ body {
   .draft-order__title {
     color: #fff;
     align-self: center;
-    font-size: 1.3vw; }
+    font-size: 2rem; }
   .draft-order__pick-box {
     align-self: stretch;
-    margin-left: 5rem; }
+    margin-left: 1.8rem; }
     .draft-order__pick-box--num {
       color: #1f1f1f;
       background-color: #fff;
@@ -258,17 +255,17 @@ body {
     transition: background-color .4s, color .4s, transform .4s; }
     .odds-panel__card--winner-num {
       display: none;
-      line-height: 6vw;
-      font-size: 4.2vw;
-      width: 6vw;
-      height: 6vw;
+      line-height: 9rem;
+      font-size: 5rem;
+      width: 9rem;
+      height: 9rem;
       font-weight: 100;
       color: #fff;
       border: .2rem solid #fff;
       border-radius: 50%; }
     .odds-panel__card--name {
       font-weight: 100;
-      font-size: 120%;
+      font-size: 140%;
       text-align: center;
       margin-top: .4rem; }
       .odds-panel__card--name span {
@@ -284,16 +281,16 @@ body {
       flex-flow: row nowrap;
       align-items: stretch;
       justify-content: space-between;
-      padding: 1.1rem 1.5rem 0 1.5rem; }
+      padding: 1.1rem 1.5rem 0 1.5rem;
+      margin-bottom: .1rem; }
       .odds-panel__card--info-box div {
         text-align: center; }
         .odds-panel__card--info-box div img {
-          width: 2vw;
-          height: 2vw; }
+          width: 2.7rem;
+          height: 2.7rem; }
         .odds-panel__card--info-box div p {
           font-weight: 200;
-          font-size: 120%;
-          margin-top: .1rem; }
+          font-size: 120%; }
         .odds-panel__card--info-box div .icon-white {
           display: none;
           opacity: 0; }
@@ -303,7 +300,7 @@ body {
       padding: .2rem 1rem .2rem 1rem;
       border-radius: 45%;
       width: 50%;
-      font-size: 1.1vw;
+      font-size: 1.3rem;
       font-weight: 700;
       letter-spacing: .2rem;
       color: #D1E6F3;

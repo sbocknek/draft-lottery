@@ -3,7 +3,7 @@
 
     &__header {
         color: $color-primary;
-        font-size: 4.3vw;
+        font-size: 6rem;
         font-weight: 800;
         text-align: center;
         padding-top: 1rem;
@@ -21,7 +21,7 @@
 
         &--stick {
             display: inline-block;
-            transition: transform .5s; 
+            transition: transform .5s ease-in-out; 
         }
     }
 
@@ -51,8 +51,8 @@
                 transition: letter-spacing .5s;
                 
                 &--stick {
-                    transform: rotate(360deg) translateX(2vw);
-                    transition: transform .5s; 
+                    transform: rotate(360deg) translateX(5rem);
+                    transition: transform .5s ease-in-out; 
                 }
             }
             

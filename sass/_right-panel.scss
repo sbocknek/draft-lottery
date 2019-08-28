@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
-    width: 75vw;
+    width: 78vw;
     background-color: $color-secondary;
     padding-bottom: .2rem;
 }
@@ -15,7 +15,7 @@
     align-items: stretch;
 
     &__left {
-        width: 75%;
+        width: 80%;
         display: flex;
         flex-flow: column nowrap;
         align-items: stretch;
@@ -34,7 +34,7 @@
             &-title {
                 display: inline-block;
                 color: #fff;
-                font-size: 2vw;
+                font-size: 2.5rem;
                 font-weight: 500;
                 background-color: $color-dark-secondary;
                 padding: .4rem 3.8rem;
@@ -47,9 +47,8 @@
             &-text {
                 
                 color: $color-dark;
-                width: 47vw;
                 font-weight: 200;
-                font-size: 1.3vw;
+                font-size: 1.8rem;
                 padding: .5rem;
 
                 &:nth-of-type(2n) {
@@ -64,7 +63,7 @@
         }
 
         &--btn-container {
-            margin-bottom: 1vw;
+            margin-bottom: 1.2rem;
             text-align: center;
 
             &-btn, &-btn:link, &-btn:visited {
@@ -73,16 +72,16 @@
                 text-decoration: none;
                 border: none;
                 border-radius: 1.8rem;
-                font-size: 1.7vw;
+                font-size: 2.3rem;
                 font-weight: 100;
-                padding: .7vw 1.5vw;
+                padding: 1rem 2rem;
                 background-color: $color-dark-secondary;
                 color: #fff;
                 cursor: pointer;
 
                 i {
                     transition: all 0.4s;
-                    margin-left: .7vw;
+                    margin-left: .8rem;
                     
                 }
 
@@ -93,7 +92,6 @@
 
                 &.btn-pick {
                     background-color: $color-button-pick;
-                    padding: .7vw 2.3vw;
 
                     i {
                         font-size: 90%;
@@ -105,7 +103,7 @@
                         visibility: hidden;
 
                         & + button {
-                            transform: translateX(-9.5vw);
+                            transform: translateX(-12rem);
                         }
                     }
                 }
@@ -121,18 +119,17 @@
 
             &-btn:hover {
                 transition: all 0.4s;
-                transform: translateY(-0.2vw);
+                transform: translateY(-.2rem);
                 background-color: $color-dark-secondary;
                 border-radius: 3rem;
                 box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 
                 i {
-                    transform: translateX(.3vw);
+                    transform: translateX(.3rem);
                 }
 
                 .btn-text {
                     transition: all 0.4s;
-                    transform: translateX(-.3vw);
                 }
             }
             
@@ -142,7 +139,7 @@
             }
 
             &-btn:first-of-type {
-                margin-right: 9vw;
+                margin-right: 8rem;
             }
 
 
@@ -152,7 +149,7 @@
 }
 
 .draft-order {
-    width: 25%;
+    width: 20%;
     background-color: $color-dark-secondary;
     display: flex;
     flex-flow: column nowrap;
@@ -164,11 +161,11 @@
     &__title {
         color: #fff;
         align-self: center;
-        font-size: 1.3vw;
+        font-size: 2rem;
     }
     &__pick-box {
         align-self: stretch;
-        margin-left: 5rem;
+        margin-left: 1.8rem;
 
         &--num {
             color: $color-dark-secondary;

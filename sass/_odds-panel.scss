@@ -20,10 +20,10 @@
 
         &--winner-num {
             display: none;
-            line-height: 6vw;
-            font-size: 4.2vw;
-            width: 6vw;
-            height: 6vw;
+            line-height: 9rem;
+            font-size: 5rem;
+            width: 9rem;
+            height: 9rem;
             font-weight: 100;
             color: #fff;
             border: .2rem solid #fff;
@@ -32,7 +32,7 @@
 
         &--name {
             font-weight: 100;
-            font-size: 120%;
+            font-size: 140%;
             text-align: center;
             margin-top: .4rem;
 
@@ -55,19 +55,19 @@
             align-items: stretch;
             justify-content: space-between;
             padding: 1.1rem 1.5rem 0 1.5rem;
+            margin-bottom: .1rem;
 
             div {
                 text-align: center;
 
                 img {
-                    width: 2vw;
-                    height: 2vw;
+                    width: 2.7rem;
+                    height: 2.7rem;
                 }
 
                 p {
                     font-weight: 200;
                     font-size: 120%;
-                    margin-top: .1rem;
                 }
 
                 .icon-white {
@@ -83,7 +83,7 @@
             padding: .2rem 1rem .2rem 1rem;
             border-radius: 45%;
             width: 50%;
-            font-size: 1.1vw;
+            font-size: 1.3rem;
             font-weight: 700;
             letter-spacing: .2rem;
             color: $color-secondary;

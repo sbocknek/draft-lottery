@@ -1,5 +1,5 @@
 .results {
-    width: 25vw;
+    width: 22vw;
     background-color: $color-primary;
     display: flex;
     flex-flow: column nowrap;
@@ -32,13 +32,13 @@
         }
 
         &--num {
-            width: 3rem;
-            height: 3rem;
+            width: 3.2rem;
+            height: 3.2rem;
             text-align: center;
-            line-height: 3rem;
-            font-size: 130%;
+            line-height: 3.2rem;
+            font-size: 1.6rem;
             border-radius: 50%;
-            color: $color-primary;
+            color: #fff;
             background-color: $color-dark;
             transition: transform .4s;
 
@@ -56,7 +56,7 @@
 
             &-name {
                 margin-bottom: .5rem;
-                font-size: 1.8vw;
+                font-size: 2.2rem;
                 color: $color-primary-dark;
                 font-weight: 700;
             }

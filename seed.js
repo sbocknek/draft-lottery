@@ -77,8 +77,8 @@ var managersArr = [
         percentage: 0
     },
     {
-        firstName: "New",
-        lastName: "Manager",
+        firstName: "Lee",
+        lastName: "Sperry",
         lastYearRank: 12,
         trades: 0,
         percentage: 0
