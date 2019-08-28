@@ -9,6 +9,10 @@
         padding-top: 1rem;
         transition: letter-spacing .5s;
 
+        @include respond(massive) {
+            padding-top: 2.5rem;
+        }
+
         &::after {
             display: block;
             height: .1rem;

@@ -103,7 +103,7 @@
                         visibility: hidden;
 
                         & + button {
-                            transform: translateX(-12rem);
+                            transform: translateX(-10rem);
                         }
                     }
                 }
@@ -118,7 +118,7 @@
             }
 
             &-btn:hover {
-                transition: all 0.4s;
+                transition: all 0.4s ease-in-out;
                 transform: translateY(-.2rem);
                 background-color: $color-dark-secondary;
                 border-radius: 3rem;

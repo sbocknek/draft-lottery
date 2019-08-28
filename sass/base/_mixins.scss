@@ -1,0 +1,13 @@
+/* $breakpoint argument decisions:
+-massive screens
+-desktop
+-laptop
+*/
+
+@mixin respond($breakpoint){
+
+    @if $breakpoint == massive {
+        @media (min-width: 3000px) { @content };
+    }
+
+}
