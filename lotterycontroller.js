@@ -57,7 +57,7 @@ var lotteryController = (function(){
     
     return {
         currentPick: 1,
-        initialiseLottery: function() {
+        initialiseLotteryLogic: function() {
             calculateStartingOdds();
             generateLotteryArray();
         },
@@ -122,25 +122,9 @@ var lotteryController = (function(){
         },
         getDraftOrderArr: function() {
             return draftOrderArr;
+        },
+        getPercPerTrade() {
+            return percentOddsForEachTradeMade;
         }
     };
 }());
-
-
-
-// // get arr showing unique remaining objects
-        // function onlyUnique(value, index, self) {
-        //     return self.indexOf(value) === index;
-        // }
-        // var uniqueArr = lotteryArr.filter(onlyUnique);
-        // updatePercentages(uniqueArr);
-
-        // uniqueArr.forEach(function(curObj){
-        //     var manager = curObj;
-        //     var managerName = curObj.fullName;
-        //     // count the number of times the name occurs in the new (with winner removed) lotteryArr
-        //     var occurences = countNameOccurences(lotteryArr, managerName);
-        //     // get the percentage of occurences out of total array length
-        //     var adjustedOdds = Math.round(occurences / lotteryArr.length * 100);
-        //     manager.percentage = adjustedOdds;
-        // });

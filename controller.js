@@ -1,6 +1,8 @@
 // GLOBAL APP CONTROLLER
 var controller = (function(lottCtrlr, UICtrlr){
 
+    var perc = lottCtrlr.getPercPerTrade();
+
     var DOM = UICtrlr.getDOMStrings();
 
     var setUpEventListeners = function() {
@@ -22,6 +24,11 @@ var controller = (function(lottCtrlr, UICtrlr){
             resetLottery();
         });
     };
+
+    function initialiseLottery() {
+        lotteryController.initialiseLotteryLogic();
+        UIController.showOddsPerTrade(lottCtrlr.getPercPerTrade());
+    }
 
     function executeLottery() {
         var winner = lottCtrlr.pickLotteryBall();
@@ -67,7 +74,8 @@ var controller = (function(lottCtrlr, UICtrlr){
     return {
         init: function() {
             console.log("Application has started");
-            lottCtrlr.initialiseLottery();
+            UICtrlr.showOddsPerTrade(perc);
+            initialiseLottery();
             UICtrlr.generateOddsCards(managersArr);
             setUpEventListeners();
         }

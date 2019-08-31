@@ -99,6 +99,10 @@ var UIController = (function(){
         },
         getDOMStrings: function() {
             return DOMstrings;
+        },
+        showOddsPerTrade: function(percPerTrade) {
+            var oddsPerTradeText = $(".odds-per-trade");
+            $(oddsPerTradeText).html(percPerTrade + "%");
         }
     };
 }());
