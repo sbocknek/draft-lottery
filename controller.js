@@ -27,7 +27,7 @@ var controller = (function(lottCtrlr, UICtrlr){
 
     function initialiseLottery() {
         lotteryController.initialiseLotteryLogic();
-        UIController.showOddsPerTrade(lottCtrlr.getPercPerTrade());
+        UIController.setTradeAndDefaultOddsTextinOverview(lottCtrlr.getPercPerTrade(), initialOddsBasedOnPrevRank);
     }
 
     function executeLottery() {
@@ -74,7 +74,6 @@ var controller = (function(lottCtrlr, UICtrlr){
     return {
         init: function() {
             console.log("Application has started");
-            UICtrlr.showOddsPerTrade(perc);
             initialiseLottery();
             UICtrlr.generateOddsCards(managersArr);
             setUpEventListeners();

@@ -10,7 +10,9 @@ var UIController = (function(){
         oddsPanelCard: ".odds-panel__card",
         pickButton: ".app__left--btn-container-btn.btn-pick",
         resetButton: ".app__left--btn-container-btn.btn-reset",
-        draftOrderName: ".draft-order__pick-box--name"
+        draftOrderName: ".draft-order__pick-box--name",
+        oddsPerTradeText: ".odds-per-trade",
+        defaultOddsText: ".default-odds-text"
     }
 
     function getOrdinalString(num) {
@@ -43,7 +45,28 @@ var UIController = (function(){
 
         // insert the HTML into the DOM
         $(DOMstrings.oddsPanel).prepend(newHtml);
+    }
 
+    function setTradeOddsText(perc) {
+        var oddsPerTradeText = $(DOMstrings.oddsPerTradeText);
+        $(oddsPerTradeText).html(perc + "%");
+    }
+    function setDefaultOddsText(defOddsArr) {
+        var defOddsContainer = $(DOMstrings.defaultOddsText);
+        var defOddsHTML = "";
+        // strip the 0 odds out of the defaultOddsArr
+        var onlyDefOddsArr = defOddsArr.filter(cur => cur > 0);
+        // loop through the onlyOddsArr backward (highest odds are at the end)
+        for (i = onlyDefOddsArr.length - 1; i >= 0; i--) {
+            // check if last iteration, to end the line
+            if (i == 0) {
+                defOddsHTML = defOddsHTML + "and <b>" + onlyDefOddsArr[i] + "%</b>."
+            } else {
+                defOddsHTML = defOddsHTML + "<b>" + onlyDefOddsArr[i] + "%</b>, "
+            }
+            
+        }
+        defOddsContainer.html(defOddsHTML);
     }
     
 
@@ -100,9 +123,9 @@ var UIController = (function(){
         getDOMStrings: function() {
             return DOMstrings;
         },
-        showOddsPerTrade: function(percPerTrade) {
-            var oddsPerTradeText = $(".odds-per-trade");
-            $(oddsPerTradeText).html(percPerTrade + "%");
+        setTradeAndDefaultOddsTextinOverview: function(percPerTrade, defaultOddsArr) {
+            setTradeOddsText(percPerTrade);
+            setDefaultOddsText(defaultOddsArr);
         }
     };
 }());
