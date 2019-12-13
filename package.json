@@ -16,7 +16,7 @@
   "author": "Seth Bocknek",
   "license": "ISC",
   "dependencies": {
-    "npm": "^6.2.0",
+    "npm": "^6.13.4",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
